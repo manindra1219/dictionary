@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dictionary Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header, .navbar {
+            background: linear-gradient(to bottom, #333, #000);
+            padding: 20px 0;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        .navbar a:hover {
+            background-color: #444;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 20px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+
+        section {
+            background-color: #fff;
+            padding: 30px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+            text-align: left;
+        }
+
+        section h2 {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+        }
+
+        section p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #666;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        button#login, button#signup {
+            background-color: red;
+            color: #fff;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        button#login:hover, button#signup:hover {
+            background-color: seagreen;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .social-media a {
+            margin: 0 10px;
+            color: #fff;
+        }
+
+        .social-media i {
+            font-size: 24px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #fff;
+        }
+
+        #aboutus img {
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#features">Features</a>
+        <a href="#aboutus">About Us</a>
+        <a href="#contactus">Contact Us</a>
+    </div>
+
+    <div class="container">
+        <a href="/login">
+            <button type="button" id="login">Login</button>
+        </a>
+        <a href="/signup">
+            <button type="button" id="signup">Signup</button>
+        </a>
+    </div>
+
+    <header>
+        <h1>Welcome To The Dictionary Dashboard</h1>
+    </header>
+    
+    <section id="features">
+        <h2>Features</h2>
+        <p>Unlock the power of language with our Dictionary Dashboard. Gain instant access to word meanings, discover synonyms to enhance your vocabulary, and explore usage examples to master your language skills.</p>
+    </section>
+
+    <section id="aboutus">
+        <h2>About Us</h2>
+        <p>Experience the ultimate language companion! Our user-friendly interface allows you to effortlessly find word definitions, enrich your vocabulary with synonyms, and put words into context with usage examples. And there's more! Our integrated dictionary API can even help you perfect your pronunciation skills.</p>
+
+        <p>Whether you're a language enthusiast, a student, or someone looking to enhance their communication skills, our Dictionary Dashboard is here to make your linguistic journey delightful. Explore and discover the beauty of language with us!</p>
+        <img src="https://cdn.glitch.global/91e3fd33-e068-490b-b921-9b33060904cb/Screenshot%20(6).png?v=1693332099421" alt="About Us">
+    </section>
+
+    <section id="contactus">
+        <h2>Contact Us</h2>
+        <form action="contact.php" method="POST" onsubmit="return showConfirmationMessage();">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit" class="btn">Submit</button>
+        </form>
+        <div id="confirmation-message" style="display: none;">Submitted successfully!</div>
+    </section>
+
+    <footer>
+        <div class="social-media">
+            <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+            <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; 2023 Dictionary App</p>
+    </footer>
+    <script>
+        function showConfirmationMessage() {
+            var confirmationMessage = document.getElementById("confirmation-message");
+            confirmationMessage.style.display = "block";
+            return true;
+        }
+    </script>
+</body>
+</html>
